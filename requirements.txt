@@ -1,0 +1,4 @@
+pandas==2.2.0
+configparser
+sqlalchemy
+psycopg2
