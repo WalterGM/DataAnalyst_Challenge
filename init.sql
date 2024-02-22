@@ -1,3 +1,7 @@
+CREATE DATABASE challenge;
+
+\c challenge;
+
 -- Table: public.ce.data.0.AllCESSeries
 
 -- DROP TABLE IF EXISTS public."ce.data.0.AllCESSeries";

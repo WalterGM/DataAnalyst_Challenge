@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     basePath = config['URLS'].get('BasePath')
     files = config['FILE_NAMES'].get("files").split(",")
-    engine = create_engine('postgresql://postgres:admin@localhost/postgres')
+    engine = create_engine('postgresql://postgres:admin@localhost/challenge')
     hdr = {'User-Agent':  'email@email.com'} ## fake email to send the http request
 
     for file in files:
