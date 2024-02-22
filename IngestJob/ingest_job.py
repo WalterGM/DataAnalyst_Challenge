@@ -11,7 +11,7 @@ if __name__ == "__main__":
     basePath = config['URLS'].get('BasePath')
     files = config['FILE_NAMES'].get("files").split(",")
     engine = create_engine('postgresql://postgres:admin@localhost/postgres')
-    hdr = {'User-Agent': 'waltgm@outlook.com'}
+    hdr = {'User-Agent':  'email@email.com'} ## fake email to send the http request
 
     for file in files:
         df_data = pd.read_csv(basePath + file, sep="\t", storage_options=hdr)
