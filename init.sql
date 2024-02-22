@@ -11,8 +11,7 @@ CREATE TABLE IF NOT EXISTS public."ce.data.0.AllCESSeries"
     series_id text COLLATE pg_catalog."default",
     year bigint,
     period text COLLATE pg_catalog."default",
-    value double precision,
-    footnote_codes text COLLATE pg_catalog."default"
+    value double precision
 )
 
 TABLESPACE pg_default;
@@ -71,12 +70,7 @@ CREATE TABLE IF NOT EXISTS public."ce.series"
     industry_code bigint,
     data_type_code bigint,
     seasonal text COLLATE pg_catalog."default",
-    series_title text COLLATE pg_catalog."default",
-    footnote_codes text COLLATE pg_catalog."default",
-    begin_year bigint,
-    begin_period text COLLATE pg_catalog."default",
-    end_year bigint,
-    end_period text COLLATE pg_catalog."default"
+    series_title text COLLATE pg_catalog."default"
 )
 
 TABLESPACE pg_default;
