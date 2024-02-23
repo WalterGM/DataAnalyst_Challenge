@@ -45,6 +45,13 @@ This solution assumes that the files are already located in a local path.
 Please remember to execute 'init.sql' in an instance of PostgreSQL
 before executing the stored procedures.
 
+##### Parameters of each stored procedure
+
+    *chunk_size: Define the number of rows loaded in each iteration.
+    *path: Local path of the file.
+
+![img.png](images/procedure.png)
+
 
 
 
