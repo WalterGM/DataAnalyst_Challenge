@@ -1,4 +1,4 @@
-CREATE OR REPLACE PROCEDURE import_data_series(chunk_size INT)
+CREATE OR REPLACE PROCEDURE import_data_series(chunk_size INT, path TEXT)
 AS $$
 
 DECLARE
@@ -9,7 +9,7 @@ DECLARE
 	data_array TEXT[];
 
 BEGIN
-    file_handle := 'C:\Temp\ce.series.txt'; -- Replace with the actual path to your file
+    file_handle := path; -- Replace with the actual path to your file
     FOR data_line IN (SELECT unnest(string_to_array(pg_read_file(file_handle), E'\n')) AS line)
     LOOP
         IF is_header THEN

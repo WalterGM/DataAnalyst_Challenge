@@ -1,4 +1,4 @@
-CREATE OR REPLACE PROCEDURE import_data_period(chunk_size INT)
+CREATE OR REPLACE PROCEDURE import_data_period(chunk_size INT, path TEXT)
 AS $$
 
 DECLARE
@@ -9,7 +9,7 @@ DECLARE
 	data_array TEXT[];
 
 BEGIN
-    file_handle := 'C:\Temp\ce.period.txt'; -- Replace with the actual path to your file
+    file_handle := path; -- Replace with the actual path to your file
     FOR data_line IN (SELECT unnest(string_to_array(pg_read_file(file_handle), E'\n')) AS line)
     LOOP
         IF is_header THEN
@@ -18,6 +18,9 @@ BEGIN
         END IF;
 		RAISE NOTICE 'my_variable: %', data_line;
 		data_array := regexp_split_to_array(data_line, E'[\t\n]+');
+		IF array_length(data_array, 1) <> 3 THEN
+            CONTINUE; -- Skip rows that do not have 2 columns
+        END IF;
         EXECUTE 'INSERT INTO "ce.period" (period, mm, month) VALUES ($1, $2, $3)' USING data_array[1], data_array[2], data_array[3];
         lines_read := lines_read + 1;
         IF lines_read >= chunk_size THEN
