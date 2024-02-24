@@ -3,8 +3,7 @@
 #### 1. Ingest the data in the CSV files using python and pandas to load into Postgres database. 
 
 This solution have the following structure  (ELT)
-
-<img src="C:\Users\waltg\OneDrive\Imágenes\option1.png"/>
+![option1.png](images%2Foption1.png)
 
 The python code consist in two main folders: 
 * IngestJob: Which contains the main job to read and load the csv files from https://download.bls.gov/pub/time.series/ce/
@@ -50,7 +49,7 @@ before executing the stored procedures.
     *chunk_size: Define the number of rows loaded in each iteration.
     *path: Local path of the file.
 
-![img.png](images/procedure.png)
+![procedure.png](images%2Fprocedure.png)
 
 
 
