@@ -35,8 +35,7 @@ endpoints with postman or another tool:
 
 #### 2. Ingest the data in the CSV files using Postgres Store Procedures (ELT).
 
- ![option1 (1).png](..%2F..%2FDownloads%2Foption1%20%281%29.png)
-
+![option1 (1).png](images%2Foption1%20%281%29.png)
 This approach consists of 5 stored procedures, 
 each of which loads a file into the database. 
 These files are contained in the 'procedures' folder. 
